@@ -21,20 +21,19 @@ This Terraform script configures AWS resources necessary to run containerized ba
 1. **Initialization:** before deploying the infrastructure, initialize Terraform to download the required providers:
 
    ```bash
-   terraform init -backend-config="bucket=kestra-ie" -backend-config="region=eu-west-1"
-
+   terraform init
    ```
 
 2. **Planning:** review the changes Terraform will perform to match your configuration:
 
    ```bash
-   terraform plan -var="aws_region=us-east-1" -var="aws_profile=default"
+   terraform plan
    ```
 
 3. **Apply Configuration:** apply the Terraform configuration to create the AWS resources:
 
    ```bash
-   terraform apply -var="aws_region=us-east-1" -var="aws_profile=default"
+   terraform apply
    ```
 
 4. **Outputs:** after successful deployment, Terraform will output the ARNs for the ECS Task Execution Role, ECS Task Role, Batch Job Queue, and Batch Compute Environment that you can add to your AWS Batch task runner in Kestra.

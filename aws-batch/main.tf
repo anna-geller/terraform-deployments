@@ -1,6 +1,8 @@
 terraform {
   backend "s3" {
     key    = "terraform.tfstate"
+    bucket = "kestra-ie"
+    region = "eu-west-1"
   }
   required_providers {
     aws = {
@@ -11,8 +13,7 @@ terraform {
 }
 
 provider "aws" {
-  region  = var.aws_region
-  profile = var.aws_profile
+  region = "eu-west-1"
   default_tags {
     tags = {
       project = "kestra"
