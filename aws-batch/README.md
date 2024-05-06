@@ -21,7 +21,8 @@ This Terraform script configures AWS resources necessary to run containerized ba
 1. **Initialization:** before deploying the infrastructure, initialize Terraform to download the required providers:
 
    ```bash
-   terraform init
+   terraform init -backend-config="bucket=kestra-ie" -backend-config="region=eu-west-1"
+
    ```
 
 2. **Planning:** review the changes Terraform will perform to match your configuration:
