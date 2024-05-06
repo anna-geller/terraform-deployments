@@ -8,11 +8,11 @@ terraform {
 }
 
 provider "aws" {
-  region  = "eu-central-1"
-  profile = "kestra"
+  region  = var.aws_region
+  profile = var.aws_profile
   default_tags {
     tags = {
-      project = "scriptRunner"
+      project = "kestra"
     }
   }
 }
